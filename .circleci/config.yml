@@ -1,10 +1,3 @@
-version: 2.1
-
-orbs:
-  aws-ecr: circleci/aws-ecr@7.2.0
-  aws-eks: circleci/aws-eks@dev:alpha
-  kubernetes: circleci/kubernetes@0.3.0
-
 jobs:
   deploy-application:
     executor: aws-eks/python3
@@ -113,6 +106,13 @@ jobs:
           name: Check on pod status
           command: |
             kubectl get pods
+
+version: 2.1
+orbs:
+  aws-eks: circleci/aws-eks@0.2.3
+  kubernetes: circleci/kubernetes@0.4.0
+  aws-ecr: circleci/aws-ecr@7.2.0
+
 workflows:
   deployment:
     jobs:
