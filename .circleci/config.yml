@@ -116,9 +116,8 @@ orbs:
 workflows:
   deployment:
     jobs:
-      - aws-ecr/build_and_push_image:
+      - aws-ecr/build-and-push-image:
           account-url: AWS_ECR_URL
-          region: AWS_DEFAULT_REGION
           repo: eks_orb_demo_app
           dockerfile: ~/project/demo_app/Dockerfile
           path: ~/project/demo_app
