@@ -119,7 +119,7 @@ workflows:
       - aws-ecr/build-and-push-image:
           account-url: AWS_ECR_URL
           repo: eks_orb_demo_app
-          dockerfile: demo_app/Dockerfile
+          dockerfile: Dockerfile
           path: demo_app
           tag: ${CIRCLE_SHA1}
           # Uncomment if the repository does not yet exist
