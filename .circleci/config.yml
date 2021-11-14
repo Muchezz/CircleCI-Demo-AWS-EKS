@@ -197,6 +197,9 @@ version: 2.1
 workflows:
   deployment:
     jobs:
+      - aws-eks/install-eksctl:
+        requires:
+          
       - aws-eks/create-cluster:
           cluster-name: my-eks-demo
           show-eksctl-command: true
