@@ -212,12 +212,12 @@ jobs:
 workflows:
   deployment:
     jobs:
-      - build
+      # - build
        
 
-      - create-cluster:
-          requires:
-            - build
+      - create-cluster
+          # requires:
+          #   - build
       - test-cluster:
           cluster-name: sampleclusters
           requires:
