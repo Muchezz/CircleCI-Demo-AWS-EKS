@@ -24,7 +24,7 @@ spec:
         app: sampleclusters
     spec:
       containers:
-        - image: elsiedev/sample:latest
+        - image: elsiedev/capstone-udacity:latest
           imagePullPolicy: Always
           name: sampleclusters
           ports:
