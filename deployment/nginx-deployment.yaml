@@ -6,7 +6,7 @@ metadata:
     app: sampleclusters
   
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: sampleclusters
@@ -29,3 +29,7 @@ spec:
           name: sampleclusters
           ports:
             - containerPort: 80
+          resources:
+          requests:
+            memory: "128Mi"
+            cpu: "500m"
