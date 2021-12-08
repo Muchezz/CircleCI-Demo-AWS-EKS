@@ -218,21 +218,21 @@ workflows:
       - create-cluster
           # requires:
           #   - build
-      - test-cluster:
-          cluster-name: sampleclusters
-          requires:
-            - create-cluster
+      # - test-cluster:
+      #     cluster-name: sampleclusters
+      #     requires:
+      #       - create-cluster
       - create-deployment:
           cluster-name: sampleclusters
           requires:
-            - test-cluster
+            - create-cluster
 
-      - undeploy-application:
-          cluster-name: sampleclusters
-          aws-region: $AWS_DEFAULT_REGION
-          requires:
-            - create-deployment
+      # - undeploy-application:
+      #     cluster-name: sampleclusters
+      #     aws-region: $AWS_DEFAULT_REGION
+      #     requires:
+      #       - create-deployment
 
-      - delete-cluster:
-          requires:
-            - undeploy-application
+      # - delete-cluster:
+      #     requires:
+      #       - undeploy-application
