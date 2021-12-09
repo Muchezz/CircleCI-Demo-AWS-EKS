@@ -228,12 +228,11 @@ workflows:
           cluster-name: sampleclusters
           requires:
             - create-cluster
-            
       - create-deployment:
           cluster-name: sampleclusters
           aws-region: $AWS_REGION
           requires:
-            - create-cluster
+            - test-cluster
 
       # - undeploy-application:
       #     cluster-name: sampleclusters
