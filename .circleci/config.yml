@@ -224,10 +224,11 @@ workflows:
       - create-cluster
           # requires:
           #   - build
-      # - test-cluster:
-      #     cluster-name: sampleclusters
-      #     requires:
-      #       - create-cluster
+      - test-cluster:
+          cluster-name: sampleclusters
+          requires:
+            - create-cluster
+            
       - create-deployment:
           cluster-name: sampleclusters
           aws-region: $AWS_REGION
